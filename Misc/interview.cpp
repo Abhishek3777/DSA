@@ -19,3 +19,4 @@ int main()
 
     return 0;
 }
+// more xor based questions to be added
