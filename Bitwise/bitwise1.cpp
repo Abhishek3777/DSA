@@ -5,6 +5,7 @@ bool isPowerOfTwo(int n)
 {
     return n > 0 && (n & (n - 1)) == 0;
 }
+// add more for bitwise
 
 int main()
 {
@@ -29,6 +30,7 @@ int main()
 
         // trick 3
         // to check if ith bit is set or not
+
 
     return 0;
 }
