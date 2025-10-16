@@ -74,8 +74,10 @@ int main()
 
     cout << a << " " << b << endl;
 
-    // add more
-    // DD
+    
+
+
+    // add bs
     return 0;
     // bitwise
 }
