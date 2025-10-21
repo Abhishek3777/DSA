@@ -22,3 +22,4 @@ public:
         return totalCandies;
     }
 };
+/// add more greedy problems
