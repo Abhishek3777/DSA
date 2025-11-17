@@ -34,7 +34,7 @@ int main()
                         sum += 3;
                     else if (j == 3 || j == 6)
                         sum += 4;
-                    else if (j == 5 || j == 6)
+                    else if(j == 4 || j == 5)
                         sum += 5;
                 }
             }
