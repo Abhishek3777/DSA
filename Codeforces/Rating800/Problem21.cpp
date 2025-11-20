@@ -15,12 +15,20 @@ int main()
         for (int i = 0; i < n; i++)
             cin >> a[i];
 
-        vector<int> b(n, 0);
-       
+        // logic
+        int cnt = 0;
+        int maxi = 0;
 
-        for (int v : b)
-            cout << v << " ";
-        cout << endl;
+        for (int v : a)
+        {
+            if (v == 0)
+                cnt++;
+            else
+                cnt = 0;
+            maxi = max(maxi, cnt);
+        }
+
+        cout << maxi << endl;
     }
 
     return 0;
