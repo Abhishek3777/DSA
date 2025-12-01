@@ -9,22 +9,41 @@ int main()
 
     while (t--)
     {
-        int n;
-        cin >> n;
-        vector<int> a(n);
-        for (int i = 0; i < n; i++)
+        int n, q;
+        cin >> n >> q;
+        vector<long long> a(n + 1);
+        for (int i = 1; i <= n; i++)
             cin >> a[i];
-        // logic
 
-        unordered_map<int, int> map;
-        for (int i = 0; i < n; i++)
-            map[i + 1] = i;
-        int maxi = 0;
-        for (int i = 0; i < n; i++)
+        // calculating total sum and prefix, suffix array
+        long long totalSum = 0;
+
+        vector<long long> prefix(n + 1, 0);
+
+        
+        for (int i = 1; i <= n; i++)
+            prefix[i] = prefix[i - 1] + a[i];
+
+        totalSum = prefix[n];
+
+        for (int i = 0; i < q; i++)
         {
-            maxi = max(maxi, abs(i - map[a[i]]));
+            int l, r, k;
+            cin >> l >> r >> k;
+
+            long long sum = totalSum;
+            long long left = l >= 2 ? prefix[l - 1] : 0;
+            long long right = prefix[r];
+            long long segment = right - left;
+            sum -= segment;
+            sum += 1LL * (r - l + 1) * k;
+
+            if (sum % 2 == 1)
+                cout << "Yes" << endl;
+
+            else
+                cout << "No" << endl;
         }
-        cout << maxi << endl;
     }
 
     return 0;
