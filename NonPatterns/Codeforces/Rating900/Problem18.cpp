@@ -36,5 +36,4 @@ int main()
 	return 0;
 }
 
-// Time Complexity (TC): O(1)
-// Space Complexity (SC): O(1)
+
